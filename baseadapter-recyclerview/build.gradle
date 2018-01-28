@@ -23,7 +23,7 @@ android {
 }
 def SUPPORT_VERSION = "25.4.0"
 dependencies {
-    compile 'com.android.support:recyclerview-v7:' + SUPPORT_VERSION
+    provided 'com.android.support:recyclerview-v7:' + SUPPORT_VERSION
 }
 repositories {
     mavenCentral()
