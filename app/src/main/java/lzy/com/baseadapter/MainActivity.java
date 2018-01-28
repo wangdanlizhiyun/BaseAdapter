@@ -1,9 +1,8 @@
 package lzy.com.baseadapter;
 
 import android.databinding.DataBindingUtil;
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.zhy.adapter.recyclerview.CommenAdapter;
@@ -23,6 +22,7 @@ import lzy.com.baseadapter.databinding.ActivityMainBinding;
 import lzy.com.compent.DaggerMainActivityrCompnent;
 
 public class MainActivity extends AppCompatActivity {
+
     ActivityMainBinding mBinding;
     @Inject
     Lazy<MessageItemViewDelegate> mMessageItemViewDelegate;
@@ -48,23 +48,23 @@ public class MainActivity extends AppCompatActivity {
                 }));
 
         //定义adapter类方式
-        mBinding.recycle.setAdapter(new MessageAdapter(this,list));
+        mBinding.recycle.setAdapter(new MessageAdapter(this, list));
 //        不自定义itemviewtype类的方式
-        mBinding.recycle.setAdapter(new CommenAdapter(this,list)
-                .addItemViewDelegate(1,new ItemViewDelegate<MessageBean>(R.layout.item_message1) {
-                    @Override
-                    public void convert(ViewHolder holder, MessageBean o, int position) {
-//                holder.setText(R.id.tv_message,"dfafafkvhchvadoigehinvn女方你打开 v 短发距离的剧啊绿那位女 i 哦女的的女啊稼女哦那如果你的黑发反对 v 啊多久啊联合发起哦闺女这几个卡都给哈哈嘎：沟发呆发回国 男的女款都翻江倒海发噶吧fdaf放大镜发动发动妇女巴拉诺夫忿 i 勤能补拙"+position);
-                        holder.setText(R.id.tv_message,o.getBody());
-                    }
-                })
+        mBinding.recycle.setAdapter(new CommenAdapter(this, list)
+                        .addItemViewDelegate(1, new ItemViewDelegate<MessageBean>(R.layout.item_message1) {
+                            @Override
+                            public void convert(ViewHolder holder, MessageBean o, int position) {
+                                holder.setText(R.id.tv_message, o.getBody());
+                            }
+                        })
         );
     }
-    private List<MessageBean> getMessage(){
+
+    private List<MessageBean> getMessage() {
         List<MessageBean> list = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             MessageBean bean = new MessageBean();
-            bean.setBody("短信内容"+i);
+            bean.setBody("短信内容" + i);
             list.add(bean);
         }
         return list;
