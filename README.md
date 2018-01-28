@@ -9,7 +9,7 @@
 	}
 
 	dependencies {
-	        compile 'com.github.wangdanlizhiyun:BaseAdapter:ed69c7c7d2'
+	        compile 'com.github.wangdanlizhiyun:BaseAdapter:9b332a264a'
 	}
 
  
