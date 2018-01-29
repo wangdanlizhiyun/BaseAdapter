@@ -1,17 +1,5 @@
 # 基于翔的代码修改的recycleview的comenadapter
  
-
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
-
-	dependencies {
-	        compile 'com.github.wangdanlizhiyun:BaseAdapter:9b332a264a'
-	}
-
  
  一种类型
        
